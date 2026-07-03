@@ -12,5 +12,8 @@ products = [
     ("USB-C USB-A Cable 1m", "Accessories", 10),
     ("Charger Ugreen 30Watt", "Accessories", 30),
     ("Radeon RX 9060 XT Gigabyte 16gb", "GPUs", 600),
-    
+
+    ("SSD ADATA 500GB SATA3", "Storage", 80),
+    ("SSD Fikwot 1tb m2 PCIe4x4", "Storage", "150"),
+    ("SSD Somnambulist 512 GB SATA3", "Storage", 90)
 ]
