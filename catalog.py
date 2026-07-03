@@ -7,4 +7,10 @@ products = [
     ("USB-C Cable 1m", "Accessories", 10),
     ("Mouse Pad XL", "Accessories", 18),
     ("Wireless Mouse", "Peripherals", 35),
+    ("Controller GameSir G7 pro", "Peripherals", 80),
+    ("Mac Mini m4 256gb 16gb RAM", 800),
+    ("USB-C USB-A Cable 1m", "Accessories", 10),
+    ("Charger Ugreen 30Watt", "Accessories", 30),
+    ("Radeon RX 9060 XT Gigabyte 16gb", "GPUs", 600),
+    
 ]
