@@ -15,5 +15,8 @@ products = [
 
     ("SSD ADATA 500GB SATA3", "Storage", 80),
     ("SSD Fikwot 1tb m2 PCIe4x4", "Storage", "150"),
-    ("SSD Somnambulist 512 GB SATA3", "Storage", 90)
-]
+    ("SSD Somnambulist 512 GB SATA3", "Storage", 90),
+    ("SSD KingDian 480GB SATA3", "Storage", 80),
+    ("Charger Tockii 60Watt", "Accessories", 50),
+    ("Ryzen 7 7800X3D", "CPUs", 340)
+ ]
