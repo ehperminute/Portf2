@@ -8,7 +8,7 @@ from catalog import products
 N_SALES = 10000
 
 
-start = datetime.date(2023, 1, 1)
+
 end = datetime.date(2025, 12, 31)
 delta = end - start
 
@@ -19,6 +19,7 @@ def gen_sales():
     for sale_id in range(1, N_SALES + 1):
         
         customer_id = random.randint(1, N_CUSTOMERS)
+        start = customers[customer_id - 1][3]
         product_id = random.randint(1, len(products))
 
         random_days = random.randrange(delta.days + 1)
