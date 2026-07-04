@@ -1,6 +1,7 @@
 import random
+import datetime 
 from generate_customers import N_CUSTOMERS
-from catalog.py import products
+from catalog import products
 
 
 
@@ -14,7 +15,7 @@ delta = end - start
 
 def gen_sales():
     sales = []
-    customers = gen_customers
+    customers = gen_customers()
     for sale_id in range(1, N_SALES + 1):
         
         customer_id = random.randint(1, N_CUSTOMERS)
@@ -23,7 +24,7 @@ def gen_sales():
         random_days = random.randint(delta.days + 1)
         sale_date = start + datetime.timedelta(days=random_days)
         quantity = random.randint(1, 5)
-        sales.append((sale_id, customer_id, product_id, sale_date))
+        sales.append((sale_id, customer_id, product_id, quantity, sale_date))
 
     print(sales[:10])
     return sales
