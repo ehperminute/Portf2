@@ -21,7 +21,7 @@ def gen_sales():
         customer_id = random.randint(1, N_CUSTOMERS)
         product_id = random.randint(1, len(products))
 
-        random_days = random.randint(delta.days + 1)
+        random_days = random.randrange(delta.days + 1)
         sale_date = start + datetime.timedelta(days=random_days)
         quantity = random.randint(1, 5)
         sales.append((sale_id, customer_id, product_id, quantity, sale_date))
