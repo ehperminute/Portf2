@@ -28,3 +28,6 @@ CREATE TABLE IF NOT EXISTS products (
     price NUMERIC NOT NULL
 );
 """)
+
+conn.commit()
+conn.close()
