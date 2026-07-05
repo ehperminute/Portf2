@@ -10,5 +10,5 @@ def export(filename, data):
         writer.writerows(data)
 
 
-for data, filename in (products, "products.csv"), (gen_sales(), "sales.csv"), (gen_cudtomers(), "customers.csv"):
+for data, filename in (products, "products.csv"), (gen_sales(), "sales.csv"), (gen_customers(), "customers.csv"):
     export(filename, data)
