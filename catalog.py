@@ -20,3 +20,14 @@ products = [
     ("Charger Tockii 60Watt", "Accessories", 50),
     ("Ryzen 7 7800X3D", "CPUs", 340)
  ]
+
+category_weights = {
+    "Accessories": 30,
+    "Peripherals": 18,
+    "Storage": 15,
+    "Displays": 10,
+    "RAM": 8,
+    "CPUs": 7,
+    "GPUs": 5,
+    "Mini PCs": 2,
+}
