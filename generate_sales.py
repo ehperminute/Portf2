@@ -1,21 +1,29 @@
 import random
 import datetime
 from generate_customers import N_CUSTOMERS, gen_customers
-from catalog import products
+from catalog import products, category_weights
 
 N_SALES = 10000
 END_DATE = datetime.date(2025, 12, 31)
 
+product_weights = [
+    category_weights[category]
+    for name, category, price in products
+]
+
 def gen_sales():
     sales = []
     customers = gen_customers()
+    chosen_products = random.choices(
+    range(len(products)),
+    weights=product_weights,
+    k=N_SALES
+)
 
-    for sale_id in range(1, N_SALES + 1):
+    for sale_id, product_id in enumerate(chosen_products):
         customer_id = random.randint(1, N_CUSTOMERS)
         customer = customers[customer_id - 1]
         registration_date = customer[3]
-
-        product_id = random.randint(1, len(products))
 
         delta = END_DATE - registration_date
         random_days = random.randrange(delta.days + 1)
