@@ -1,8 +1,20 @@
 from database import get_connection
-from generate_customers import gen_customers
-from generate_sales import gen_sales
-from catalog import products
 from psycopg2 import sql
+from table_config import TABLES, generate_all_data
+
+
+def reset_tables():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        TRUNCATE sales, customers, products
+        RESTART IDENTITY CASCADE;
+    """)
+
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 
 def insert_db(table, columns, data):
@@ -28,17 +40,17 @@ def insert_db(table, columns, data):
     conn.close()
 
 
-products_with_ids = [
-    (id, *product)
-    for id, product in enumerate(products, start=1)
-]
+def load_all():
+    reset_tables()
+    all_data = generate_all_data()
 
-customers = gen_customers()
+    for table_config in TABLES:
+        table_name = table_config["name"]
+        columns = table_config["columns"]
+        data = all_data[table_name]
 
-for table, columns, data in (
-                            ("products", ["id", "name", "category", "price"], products_with_ids), 
-                            ("customers", ["id", "country", "segment", "registration_date"], customers),
-                            ("sales", ["id", "customer_id", "product_id", "quantity", "sale_date"], gen_sales(customers))
-        
-                            ):
-    insert_db(table, columns, data)
+        insert_db(table_name, columns, data)
+
+
+if __name__ == "__main__":
+    load_all()
