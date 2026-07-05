@@ -34,5 +34,4 @@ def gen_sales(customers=None):
 
         sales.append((sale_id, customer_id, product_id, quantity, sale_date))
 
-    print(sales[:10])
     return sales

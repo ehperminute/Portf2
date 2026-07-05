@@ -29,5 +29,4 @@ def gen_customers():
 
         customers.append((customer_id, country, segment, registration_date))
 
-    print(customers[:10])
     return customers
