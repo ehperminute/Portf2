@@ -1,7 +1,7 @@
 from database import get_connection
 
 conn = get_connection()
-cursor = connection.cursor()
+cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS sales (
     id INTEGER PRIMARY KEY,
