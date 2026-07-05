@@ -15,12 +15,12 @@ def gen_sales():
     sales = []
     customers = gen_customers()
     chosen_products = random.choices(
-    range(len(products)),
+    range(1, len(products)+1),
     weights=product_weights,
     k=N_SALES
 )
 
-    for sale_id, product_id in enumerate(chosen_products):
+    for sale_id, product_id in enumerate(chosen_products, start=1):
         customer_id = random.randint(1, N_CUSTOMERS)
         customer = customers[customer_id - 1]
         registration_date = customer[3]
