@@ -1,7 +1,7 @@
 import csv
 from generate_customers import gen_customers
 from generate_sales import gen_sales
-from products import products
+from catalog import products
 
 
 def export(filename, data):
@@ -10,4 +10,5 @@ def export(filename, data):
         writer.writerows(data)
 
 
-for data, filename in ()
+for data, filename in (products, "products.csv"), (gen_sales(), "sales.csv"), (gen_cudtomers(), "customers.csv"):
+    export(filename, data)
