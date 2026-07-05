@@ -11,9 +11,10 @@ product_weights = [
     for name, category, price in products
 ]
 
-def gen_sales():
+def gen_sales(customers=None):
     sales = []
-    customers = gen_customers()
+    if customers is None:
+        customers = gen_customers()
     chosen_products = random.choices(
     range(1, len(products)+1),
     weights=product_weights,
@@ -21,7 +22,7 @@ def gen_sales():
 )
 
     for sale_id, product_id in enumerate(chosen_products, start=1):
-        customer_id = random.randint(1, N_CUSTOMERS)
+        customer_id = random.randint(1, len(customers))
         customer = customers[customer_id - 1]
         registration_date = customer[3]
 
