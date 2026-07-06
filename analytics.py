@@ -1,22 +1,15 @@
-from database import get_connection
+from database import fetch_all
 
-conn = get_connection()
-cursor = conn.cursor()
-
-cursor.execute("""
+rows = fetch_all("""
     SELECT 
-        p.category,
-        SUM(s.quantity * p.price) AS revenue
+    p.name,
+    p.category,
+    SUM(s.quantity * p.price) AS revenue
     FROM sales s
     JOIN products p ON s.product_id = p.id
-    GROUP BY p.category
+    GROUP BY p.name, p.category
     ORDER BY revenue DESC;
-""")
+    """)
 
-rows = cursor.fetchall()
-
-for row in rows:
-    print(row)
-
-cursor.close()
-conn.close()
+for name, category, revenue in rows:
+    print(f"{name} ({category}): ${revenue:,.2f}")
