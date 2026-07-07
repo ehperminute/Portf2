@@ -1,3 +1,6 @@
+## Project Overview
+
+This project simulates a small e-commerce dataset using Python, loads the generated data into PostgreSQL, and runs SQL-based analytics and data quality checks. The goal is to practice core data engineering skills such as data generation, relational modeling, database loading, validation, and documentation.
 ## Data Quality Checks
 
 This project includes SQL-based data quality checks using Python and PostgreSQL.
