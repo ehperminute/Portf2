@@ -16,7 +16,6 @@ The checks are executed with:
 ```bash
 python quality_checks.py
 
-result:
 PASS - No sales with quantity <= 0
 PASS - No products with price <= 0
 PASS - No sales with missing customers
