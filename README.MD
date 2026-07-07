@@ -4,21 +4,26 @@ This project includes SQL-based data quality checks using Python and PostgreSQL.
 
 Current checks:
 
-- Sales quantity must be greater than 0.
-- Product price must be greater than 0.
-- Every sale must reference an existing customer.
-- Every sale must reference an existing product.
-- Sale date cannot be earlier than customer registration date.
-- Customer segment must belong to the allowed segment list.
+* Sales quantity must be greater than 0.
+* Product price must be greater than 0.
+* Every sale must reference an existing customer.
+* Every sale must reference an existing product.
+* Sale date cannot be earlier than customer registration date.
+* Customer segment must belong to the allowed segment list.
 
 The checks are executed with:
 
 ```bash
 python quality_checks.py
+```
 
+Expected output:
+
+```text
 PASS - No sales with quantity <= 0
 PASS - No products with price <= 0
 PASS - No sales with missing customers
 PASS - No sales with missing products
 PASS - No sale before customer registration date
 PASS - No invalid customer segments
+```
