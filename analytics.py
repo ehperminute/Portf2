@@ -1,15 +1,8 @@
 from database import fetch_all
+from analytics_queries import QUERIES
 
-rows = fetch_all("""
-    SELECT 
-    p.name,
-    p.category,
-    SUM(s.quantity * p.price) AS revenue
-    FROM sales s
-    JOIN products p ON s.product_id = p.id
-    GROUP BY p.name, p.category
-    ORDER BY revenue DESC;
-    """)
+
+rows = fetch_all(QUERIES["revenue_by_product"])
 
 for name, category, revenue in rows:
     print(f"{name} ({category}): ${revenue:,.2f}")
