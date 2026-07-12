@@ -53,7 +53,7 @@ def save_revenue_by_country():
     plt.figure(figsize=(10, 6))
     plt.barh(df["country"], df["revenue_millions"])
     plt.title("Revenue by Country")
-    plt.xlabel("Revenue (millions)")
+    plt.xlabel("Revenue (millions MXN)")
     plt.ylabel("Country")
     plt.tight_layout()
     plt.savefig(CHARTS_DIR / "revenue_by_country.png")
