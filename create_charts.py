@@ -46,12 +46,14 @@ def save_revenue_by_country():
     df = pd.read_csv(REPORTS_DIR / "revenue_by_country.csv")
     df["revenue"] = pd.to_numeric(df["revenue"])
 
-    df = df.sort_values("revenue", ascending=True)
+    df["revenue_millions"] = df["revenue"] / 1_000_000
+
+    df = df.sort_values("revenue_millions", ascending=True)
 
     plt.figure(figsize=(10, 6))
-    plt.barh(df["country"], df["revenue"])
+    plt.barh(df["country"], df["revenue_millions"])
     plt.title("Revenue by Country")
-    plt.xlabel("Revenue")
+    plt.xlabel("Revenue (millions)")
     plt.ylabel("Country")
     plt.tight_layout()
     plt.savefig(CHARTS_DIR / "revenue_by_country.png")
