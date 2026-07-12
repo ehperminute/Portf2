@@ -23,13 +23,22 @@ The checks are executed with:
 python quality_checks.py
 ```
 
-Expected output:
+## Dashboard Preview
 
-```text
-PASS - No sales with quantity <= 0
-PASS - No products with price <= 0
-PASS - No sales with missing customers
-PASS - No sales with missing products
-PASS - No sale before customer registration date
-PASS - No invalid customer segments
-```
+The project includes simple chart outputs generated from the exported PostgreSQL analytics reports.
+
+### Revenue by Category
+
+![Revenue by category](dashboard/screenshots/revenue_by_category.png)
+
+### Top Products by Revenue
+
+![Top products by revenue](dashboard/screenshots/top_products_by_revenue.png)
+
+### Revenue by Country
+
+![Revenue by country](dashboard/screenshots/revenue_by_country.png)
+
+### Monthly Revenue
+
+![Monthly revenue](dashboard/screenshots/monthly_revenue.png)
