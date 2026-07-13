@@ -18,8 +18,9 @@ start = datetime.date(2023, 1, 1)
 end = datetime.date(2025, 12, 31)
 delta = end - start
 
-customers = []
+
 def gen_customers():
+    customers = []
     for customer_id in range(1, N_CUSTOMERS + 1):
         country = random.choices(countries, weights=country_weights, k=1)[0]
         segment = random.choices(segments, weights=segment_weights, k=1)[0]
