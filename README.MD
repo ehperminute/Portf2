@@ -42,3 +42,14 @@ The project includes simple chart outputs generated from the exported PostgreSQL
 ### Monthly Revenue
 
 ![Monthly revenue](dashboard/screenshots/monthly_revenue.png)
+
+
+## How to Run
+
+```bash
+docker compose up -d
+python init_db.py
+python load_data.py
+python quality_checks.py
+python export_reports.py
+python create_charts.py
